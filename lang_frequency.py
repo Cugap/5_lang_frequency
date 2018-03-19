@@ -3,12 +3,12 @@ from texttable import Texttable
 
 def load_data(filepath):
     try:
-        f = open(filepath, 'r')
+        file = open(filepath, 'r')
         text = f.read()
     except Exception as ex:
         print typeof(ex)
     finally:
-        f.close
+        file.close
         return text
 
 def get_words_from_text(text):
@@ -21,18 +21,18 @@ def get_most_frequent_words(text):
     words = get_words_from_text(text)
     dictionary = []
     words_num = []
-    t = Texttable()
-    t.add_row(["Word", "Number uf uses"])
+    table = Texttable()
+    table.add_row(["Word", "Number uf uses"])
     for word in words:
         try:
-            i = dictionary.index(word)
-            words_num[i] += 1
+            index = dictionary.index(word)
+            words_num[index] += 1
         except ValueError:
             dictionary.append(word)
             words_num.append(1)
-    for i in range(len(dictionary)):
-        t.add_row([dictionary[i], str(words_num[i])])
-    print (t.draw())
+    for index in range(len(dictionary)):
+        table.add_row([dictionary[index], str(words_num[index])])
+    print (table.draw())
 
 
 if __name__ == '__main__':
