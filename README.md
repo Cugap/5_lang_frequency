@@ -1,6 +1,6 @@
 # Frequency Analysis of Words
 
-[TODO. There will be project description]
+Input absolute or relative path to file, that you whant analize in console after application request. Get results from console window. 
 
 # Project Goals
 
