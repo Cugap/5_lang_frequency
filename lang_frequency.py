@@ -5,8 +5,8 @@ def load_data(filepath):
     try:
         f = open(filepath, 'r')
         text = f.read()
-    except All:
-        print (e)
+    except Exception as ex:
+        print typeof(ex)
     finally:
         f.close
         return text
