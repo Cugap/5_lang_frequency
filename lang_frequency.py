@@ -3,8 +3,8 @@ from texttable import Texttable
 
 def load_data(filepath):
     try:
-        file = open(filepath, 'r')
-        text = f.read()
+        file = open(filepath, "r")
+        text = file.read()
     except Exception as ex:
         print typeof(ex)
     finally:
@@ -12,10 +12,11 @@ def load_data(filepath):
         return text
 
 def get_words_from_text(text):
+    text = text.lower()
     regex = re.compile(r"[^a-zа-я]", re.IGNORECASE)
-    text = text.lower();
     text = re.sub(regex, ' ', text)
-    return [x for x in re.split(' +', text) if x]
+    
+    return [x for x in re.split(" +", text) if x]
 
 def get_most_frequent_words(text):
     words = get_words_from_text(text)
@@ -35,7 +36,7 @@ def get_most_frequent_words(text):
     print (table.draw())
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     print ("Please input path for analized file")
     text = load_data (input())
     get_most_frequent_words(text)
