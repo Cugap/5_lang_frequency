@@ -34,7 +34,6 @@ def get_most_frequent_words(text):
 
     print(table.draw())
 
-
 if __name__ == "__main__":
     print("Please input path for analized file")
     text = load_data(input())
